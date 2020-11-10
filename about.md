@@ -1,10 +1,10 @@
 ---
-title: "Privacy Policy"
+title: "サイトのプライバシーポリシーについて"
 date: 2020-11-04T11:07:11+09:00
 description: プライバシーポリシー
 menu:
   sidebar:
-    name: Privacy Policy
+    name: プライバシーポリシー
     identifier: privacy-policy
     weight: 999
 ---

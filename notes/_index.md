@@ -2,7 +2,7 @@
 title: Notes
 menu:
   sidebar:
-    name: Notes
+    name: Notes 【技術以外のこと】
     identifier: notes
-    weight: 2
+    weight: 3
 ---
