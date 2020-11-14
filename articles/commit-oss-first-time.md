@@ -21,13 +21,13 @@ news_keywords:
 
 ブログの記事を PC で表示しているときに右側に表示されている `Table of Contents` の欄。クリックするとその項目のところまでヌメっと動くのですが、
 
-{{< youtube VQCI67IulwM >}}
+{{< youtube xhEhZULKLGQ >}}
 
 {{< vs >}}
 
 項目名にマルチバイト文字が入っている際にうまくいきませんでした。
 
-{{< youtube VXO9RrslUHk >}}
+{{< youtube 4-Qsv20CSNI >}}
 
 {{< vs >}}
 
@@ -39,7 +39,7 @@ https://dev.to/nabbisen/jquery-id-syntax-error-unrecognized-expression-10b5
 
 ID 値に日本語（マルチバイト文字）が含まれている場合うまくいかないのでは？となり、上記サイトに従って `this.hash` を `decodeURI(this.hash)` にしたところ、
 
-{{< youtube 4FCPFw1ss1s >}}
+{{< youtube kTN_xxt2vh8 >}}
 
 {{< vs >}}
 
