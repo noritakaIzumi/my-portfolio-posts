@@ -1,5 +1,5 @@
 ---
-title: "SSL サイトで file_get_contents できないときは openssl の疎通確認をするとよい"
+title: "PHP: SSL サイトで file_get_contents できないときは openssl の疎通確認をするとよい"
 date: 2020-12-03T08:39:31+09:00
 description: Docker のコンテナ内から https の URL に対して、 curl できたのに PHP で file_get_contents できないパターンがあったので検証します。
 news_keywords:
@@ -21,6 +21,8 @@ Docker のコンテナ内から https の URL に対して、 `curl` できた�
 
 「？」と思ったので検証してみます。
 
+Windows 10 Pro を使用しています。
+
 ---
 
 ## :coffee: 準備
@@ -40,7 +42,7 @@ cd /path/to/dir
 私は Windows 使いなので chocolatey でインストールします。
 PowerShell を管理者権限で開いて実行します。
 
-```html
+```bash
 cinst -y mkcert
 ```
 
@@ -94,7 +96,7 @@ mkcert -CAROOT
 今回用意するファイルは以下の通りです。
 
 ```html
-C:.
+/path/to/dir
 │  docker-compose.yml
 │  Dockerfile
 │
@@ -109,11 +111,6 @@ C:.
 ```
 
 ###### `./docker-compose.yml`
-
-```bash
-cd /path/to/dir
-vi ./docker-compose.yml
-```
 
 今回はコンテナ内でコマンドを打ちますので、ポートを開ける必要はありません。
 
@@ -132,8 +129,7 @@ services:
 
 この後の検証で何度か編集しますので、今は空のファイルを用意しておきます。
 
-```bash
-touch ./Dockerfile
+```dockerfile
 ```
 
 ###### `./html/index.php`
@@ -332,7 +328,7 @@ Warning: file_get_contents(https://php-apache.com/): failed to open stream: oper
 
 - curl
 
-PHP でエラーが起こっているが、 **curl に関してエラーが出ていない** ので成功とします。
+PHP でエラーが起こっていますが、 **curl に関してエラーが出ていない** ので成功とします。
 
 ```html
 $ winpty docker exec -it php-apache.com curl https://php-apache.com/

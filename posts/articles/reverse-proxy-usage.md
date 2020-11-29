@@ -43,7 +43,7 @@ Docker Desktop で開発するということを前提に次の 2 通りの方�
 
 `hosts` ファイルは次のように記述します。
 
-```ini
+```html
 127.0.0.1 app-a
 127.0.0.1 app-b
 127.0.0.1 site-c
@@ -61,7 +61,11 @@ Docker Desktop で開発するということを前提に次の 2 通りの方�
 
 ブラウザからのアクセスは最初はすべてリバースプロキシを通り、そこから ServerName によってアプリやダミーサイトにアクセスがいきます。
 
-下の図でイメージしていただければ幸いです。わからない場合はさらに調べてみてください。
+下の図でイメージしていただければ幸いです。
+
+{{< alert type="info" >}}
+私自身、リバースプロキシの理解には [こちらの記事](https://qiita.com/zawawahoge/items/a931de1464ccaa228551) を参考にさせていただきました。
+{{< /alert >}}
 
 ![Reverse proxy figure](/images/posts/reverse-proxy-figure.png)
 
@@ -103,7 +107,7 @@ Docker Desktop で開発するということを前提に次の 2 通りの方�
 
 ファイルの概要を紹介しておきます。
 
-#### :page_facing_up: `docker-compose.yml`
+#### :page_facing_up: `./docker-compose.yml`
 
 アプリとサイトそれぞれにコンテナを用意しますが、ポートはリバースプロキシにしか開けません。
 
@@ -135,7 +139,7 @@ services:
       - "80:80"
 ```
 
-#### :page_facing_up: `nginx/conf.d/reverse-proxy.nginx.conf`
+#### :page_facing_up: `./nginx/conf.d/reverse-proxy.nginx.conf`
 
 コンテナ間の通信がコンテナ名で行えることを利用します。
 
@@ -171,7 +175,7 @@ server {
 }
 ```
 
-#### :page_facing_up: `site-c/index.html`
+#### :page_facing_up: `./site-c/index.html`
 
 この中で `app-a/index.js` が読み込まれ、さらにその Javascript が `app-b/index.php` を読み込むようになっています。
 
@@ -190,7 +194,7 @@ server {
 </html>
 ```
 
-#### :page_facing_up: `app-a/index.js`
+#### :page_facing_up: `./app-a/index.js`
 
 文字を出力した後、 `http://app-b/` にリクエストを送ります。
 
@@ -206,9 +210,9 @@ request.addEventListener('load', () => {
 request.send();
 ```
 
-#### :page_facing_up: `app-b/index.php`
+#### :page_facing_up: `./app-b/index.php`
 
-今回は無駄に 2 秒待ってから UA を返すスクリプトを書いてみました。
+今回は ~~無駄に~~ 2 秒待ってから UA を返すスクリプトを書いてみました。
 
 ```php
 <?php
@@ -221,9 +225,9 @@ echo json_encode($resp);
 exit;
 ```
 
-#### :page_facing_up: `app-a/index.html`
+#### :page_facing_up: `./app-a/index.html`
 
-空ファイルです
+空ファイルです。
 
 ---
 
