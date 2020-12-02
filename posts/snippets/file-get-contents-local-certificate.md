@@ -1,12 +1,15 @@
 ---
 title: "ローカル環境の時だけ自己署名証明書のサイトへの file_get_contents を通す"
-date: 2020-06-08T06:00:20+06:00
+date: 2020-12-03T12:57:47+09:00
 description: file_get_contents でローカル環境の時だけ証明書検証をスキップする設定を入れるコード。
 news_keywords:
   - Google News に伝えたいキーワード
   - Qiita のタグのようなものと思ってよい
-draft: true
 ---
+
+環境を指定する変数 `$environment` を用意し、その値に応じて `file_get_contents` に渡す引数を変えるような関数を作成しました。
+
+これにより、ローカル環境 `$environment = 'local'` のときに証明書の検証を無視するような設定ができるかと思います。
 
 ```php
 <?php
