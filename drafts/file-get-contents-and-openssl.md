@@ -116,12 +116,14 @@ mkcert -CAROOT
 今回はコンテナ内でコマンドを打ちますので、ポートを開ける必要はありません。
 
 ```yaml
+```yaml
+```yaml
 version: '3'
 
 services:
   php-apache:
     container_name: php-apache.com
-    build: .
+    build: ../posts/articles
     volumes:
       - ./html:/var/www/html
 ```
