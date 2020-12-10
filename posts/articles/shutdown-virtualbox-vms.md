@@ -1,8 +1,7 @@
 ---
 title: "Windows のシャットダウン時にうっかり VirtualBox VM のシャットダウンを忘れてしまう方へ"
-date: 2020-12-01T07:00:00+09:00
+date: 2020-12-26T07:00:00+09:00
 description: VirtualBox VM のシャットダウンを行うスクリプトを作成します。
-draft: true
 news_keywords:
   - VirtualBox
   - シャットダウン

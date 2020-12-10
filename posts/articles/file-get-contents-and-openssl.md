@@ -1,8 +1,7 @@
 ---
 title: "PHP: SSL サイトで file_get_contents できないときは openssl の疎通確認をするとよい"
-date: 2020-12-07T07:00:00+09:00
+date: 2020-12-26T07:00:00+09:00
 description: Docker のコンテナ内から https の URL に対して、 curl できたのに PHP で file_get_contents できないパターンがあったので検証します。
-draft: true
 news_keywords:
   - https
   - PHP
@@ -118,12 +117,13 @@ mkcert -CAROOT
 ```yaml
 ```yaml
 ```yaml
+```yaml
 version: '3'
 
 services:
   php-apache:
     container_name: php-apache.com
-    build: ../posts/articles
+    build: ""
     volumes:
       - ./html:/var/www/html
 ```
