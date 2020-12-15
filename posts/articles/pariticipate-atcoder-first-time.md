@@ -9,6 +9,10 @@ news_keywords:
   - プログラミング
 ---
 
+{{< alert type="info" >}}
+こちらの記事は [競技プログラミング Advent Calendar 2020 - Qiita](https://qiita.com/advent-calendar/2020/competitive-programming) の 10 日目の記事です。
+{{< /alert >}}
+
 始めて AtCoder のプログラミングコンテストに参加したので、その感想を書きます。
 
 今回参加したコンテストはこちらです。

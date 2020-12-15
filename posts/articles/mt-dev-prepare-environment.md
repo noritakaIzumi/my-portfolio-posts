@@ -1,12 +1,16 @@
 ---
 title: "Movable Type 公式の開発環境を Docker で構築してみた"
-date: 2020-12-10T23:34:39+09:00
+date: 2020-12-26T07:00:00+09:00
 description: Movable Type が公式で MT の開発環境を構築できる mt-dev を公開していたので、これを使って Docker による MT の環境構築をしてみました。
 news_keywords:
   - Movable Type
   - Docker
   - mt-dev
 ---
+
+{{< alert type="info" >}}
+こちらの記事は [名前は聞いたことあるけど使ったことないやつをせっかくだから使ってみる Advent Calendar 2020 - Qiita](https://qiita.com/advent-calendar/2020/sekkaku) 14 日目の記事です。
+{{< /alert >}}
 
 ブログや Web サイトなどの作成で WordPress と並んで使用されている CMS に [Movable Type](https://www.movabletype.jp/) があります。
 
@@ -37,7 +41,7 @@ Movable Type 自体は有料のサービスなのですが、個人利用で非�
 
 [Movable Type 個人無償版ダウンロード](https://www.sixapart.jp/inquiry/movabletype/personal_download.html) にアクセスして必要事項を入力し、「上記に同意して申し込む」をクリックします。
 
-![Movable Type Download](/images/posts/movable-type-download.png)
+![Movable Type Download](/images/posts/movable-type-download.png)<!-- @IGNORE PREVIOUS: link -->
 
 申し込みが完了すると、入力したメールアドレスにダウンロードページ URL の書いたメールが届きます。
 
@@ -187,7 +191,7 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 
 ブラウザで `http://localhost/cgi-bin/mt/mt.cgi` を開き、以下のようにアカウントの作成画面が表示されることを確認します。
 
-![Movable Type Create Account](/images/posts/movable-type-create-account.png)
+![Movable Type Create Account](/images/posts/movable-type-create-account.png)<!-- @IGNORE PREVIOUS: link -->
 
 アカウントやサイトの作成については説明を省きますので、好きなように遊んでみてください :smile:
 

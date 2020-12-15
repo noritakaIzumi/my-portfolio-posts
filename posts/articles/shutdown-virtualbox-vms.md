@@ -7,6 +7,10 @@ news_keywords:
   - シャットダウン
 ---
 
+{{< alert type="info" >}}
+こちらの記事は [ちょっとした工夫で効率化！01【PR】パソナテック Advent Calendar 2020 - Qiita](https://qiita.com/advent-calendar/2020/pasonatech-tips) 1 日目の記事です。
+{{< /alert >}}
+
 Windows で VirtualBox を使っている方にはわかるかもしれないのですが、普段の業務終了時に VM を終了せずに PC をシャットダウンしようとして↓のようなメッセージが表示されたことはないですか？ :smiling_imp:
 
 > VirtualBox Interface

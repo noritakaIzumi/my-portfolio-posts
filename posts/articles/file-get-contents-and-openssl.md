@@ -8,6 +8,10 @@ news_keywords:
   - file_get_contents
 ---
 
+{{< alert type="info" >}}
+この記事は [PHP Advent Calendar 2020 - Qiita](https://qiita.com/advent-calendar/2020/php) 6 日目の記事です。
+{{< /alert >}}
+
 ## :bulb: まとめ
 
 {{< alert type="info" >}}
