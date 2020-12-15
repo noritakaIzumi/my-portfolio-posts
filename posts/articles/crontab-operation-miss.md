@@ -75,7 +75,13 @@ $ scp ./file.txt target_user@centos:/tmp
 
 > 私「では反映いっちゃいますか :pray:」
 >
-> 先輩「いいよー、 **`crontab /tmp/file.txt`** っと...いくよー？ :wink:」
+> 先輩「いいよー、 **`crontab /tmp/file.txt`** っと...」
+
+```html
+[root@centos ~]$ crontab /tmp/file.txt
+```
+
+> 先輩「いくよー？ :wink:」
 >
 > 私「いいですよー！ :smiley:」
 >
@@ -102,6 +108,8 @@ Crontab の反映が完了しました。
 root ユーザで作業していました。
 
 何度見ても root ユーザなのには変わりありませんでした。
+
+私は root ユーザの Crontab を他のユーザのもので上書きしたのです。
 
 こうして root ユーザの Crontab は失われました。
 
