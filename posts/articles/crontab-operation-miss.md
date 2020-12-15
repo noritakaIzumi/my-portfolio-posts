@@ -50,16 +50,16 @@ root ユーザの Crontab を他の一般ユーザのもので上書きしまし
 まずサーバでの操作です。
 目的のユーザにログインして Crontab をファイルにリダイレクトしておきます。
 
-```shell script
+```html
 $ ssh target_user@centos
-$ crontab -l > /tmp/file.txt
-$ exit
+[target_user@centos ~]$ crontab -l > /tmp/file.txt
+[target_user@centos ~]$ exit
 ```
 
 次にローカルでの操作です。
 次にローカルにファイルをダウンロードして、編集してからアップロードします。堅実ですね。
 
-```shell script
+```html
 $ scp target_user@centos:/tmp/file.txt .
 $ いろいろ編集する
 $ scp ./file.txt target_user@centos:/tmp
