@@ -6,6 +6,12 @@ news_keywords:
   - Movable Type
   - Docker
   - mt-dev
+menu:
+  sidebar:
+    name: Movable Type
+    identifier: mt-dev-prepare-environment
+    parent: advent-calender-2020
+    weight: 20201214
 ---
 
 {{< alert type="info" >}}

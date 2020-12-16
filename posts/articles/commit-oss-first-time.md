@@ -17,7 +17,7 @@ news_keywords:
 
 ## :bug: 見つけた不具合
 
-![Table of contents](/images/posts/table-of-contents.png)
+![Table of contents](/images/posts/table-of-contents.png)<!-- @IGNORE PREVIOUS: link -->
 
 ブログの記事を PC で表示しているときに右側に表示されている `Table of Contents` の欄。クリックするとその項目のところまでヌメっと動くのですが、
 
@@ -51,11 +51,11 @@ OSS にプルリクエストを送る流れは以下のようになります。
 
 - OSS のソースコードをフォークする
 
-![Fork](/images/posts/fork.png)
+![Fork](/images/posts/fork.png)<!-- @IGNORE PREVIOUS: link -->
 
 そうすると自分のところにリポジトリをクローンしたような形になります。
 
-![Clone after fork](/images/posts/clone-after-fork.png)
+![Clone after fork](/images/posts/clone-after-fork.png)<!-- @IGNORE PREVIOUS: link -->
 
 - 自分のリポジトリで新しくブランチを作成してソースコードをいじる
 
@@ -67,7 +67,7 @@ OSS にプルリクエストを送る流れは以下のようになります。
 
 見事マージされて、 OSS に貢献することができました。
 
-![Pull request](/images/posts/pull-request.png)
+![Pull request](/images/posts/pull-request.png)<!-- @IGNORE PREVIOUS: link -->
 
 ## :muscle: 貢献するのは意外と難しくない
 

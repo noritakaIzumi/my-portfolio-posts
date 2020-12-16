@@ -5,6 +5,12 @@ description: VirtualBox VM のシャットダウンを行うスクリプトを�
 news_keywords:
   - VirtualBox
   - シャットダウン
+menu:
+  sidebar:
+    name: Windows × VirtualBox
+    identifier: shutdown-virtualbox-vms
+    parent: advent-calender-2020
+    weight: 20201201
 ---
 
 {{< alert type="info" >}}

@@ -6,6 +6,12 @@ news_keywords:
   - https
   - PHP
   - file_get_contents
+menu:
+  sidebar:
+    name: file_get_contents
+    identifier: file-get-contents-and-openssl
+    parent: advent-calender-2020
+    weight: 20201206
 ---
 
 {{< alert type="info" >}}

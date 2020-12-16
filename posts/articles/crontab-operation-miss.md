@@ -5,6 +5,12 @@ description: 2 人で crontab をいじっていてやらかしたことを書�
 news_keywords:
   - Crontab
   - 本番環境
+menu:
+  sidebar:
+    name: Crontab でやらかした
+    identifier: crontab-operation-miss
+    parent: advent-calender-2020
+    weight: 20201217
 ---
 
 {{< alert type="info" >}}
