@@ -1,20 +1,20 @@
 ---
-title: "Advent Calender 2020 参加記事まとめ"
+title: "Advent Calendar 2020 参加記事まとめ"
 date: 2020-12-26T07:00:01+09:00
-description: Advent Calender 2020 に参加した記事のまとめです。 PHP や競技プログラミング、本番環境でやらかしちゃった人のカレンダーなどに参加しました。
+description: Advent Calendar 2020 に参加した記事のまとめです。 PHP や競技プログラミング、本番環境でやらかしちゃった人のカレンダーなどに参加しました。
 hero: /images/posts/eto/eto_moji_01ne.png
 news_keywords:
-  - Advent Calender
+  - Advent Calendar
   - 2020
 menu:
   sidebar:
     name: 2020
-    identifier: advent-calender-2020
-    parent: advent-calender
+    identifier: advent-calendar-2020
+    parent: advent-calendar
     weight: 7980
 ---
 
-2020 年の Advent Calender へ参加した記事のリンクをここにまとめています。
+2020 年の Advent Calendar へ参加した記事のリンクをここにまとめています。
 
 ぜひご覧ください :wink:
 
@@ -84,4 +84,4 @@ menu:
 
 ---
 
-2021 年も Advent Calender を通して、またそれ以外でもたくさんのアウトプットをしていこうと思っていますので、お楽しみに :smile:
+2021 年も Advent Calendar を通して、またそれ以外でもたくさんのアウトプットをしていこうと思っていますので、お楽しみに :smile:

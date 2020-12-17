@@ -1,21 +1,21 @@
 ---
-title: "Advent Calender 2019 参加記事まとめ"
+title: "Advent Calendar 2019 参加記事まとめ"
 date: 2020-12-26T07:00:00+09:00
-description: Advent Calender 2020 に参加した記事のまとめです。 PHP や競技プログラミング、本番環境でやらかしちゃった人のカレンダーなどに参加しました。
+description: Advent Calendar 2020 に参加した記事のまとめです。 PHP や競技プログラミング、本番環境でやらかしちゃった人のカレンダーなどに参加しました。
 hero: /images/posts/eto/eto_moji_12i.png
 news_keywords:
-  - Advent Calender
+  - Advent Calendar
   - 2019
   - free_dev_com
 menu:
   sidebar:
     name: 2019
-    identifier: advent-calender-2019
-    parent: advent-calender
+    identifier: advent-calendar-2019
+    parent: advent-calendar
     weight: 7981
 ---
 
-2019 年の Advent Calender へ参加した記事のリンクをここにまとめています。
+2019 年の Advent Calendar へ参加した記事のリンクをここにまとめています。
 
 2019 年は当時の社内の新卒で立ち上げた [free_dev_com Advent Calendar 2019 - Adventar](https://adventar.org/calendars/4736) に記事を書いています。
 
