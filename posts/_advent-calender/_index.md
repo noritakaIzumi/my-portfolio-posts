@@ -2,7 +2,7 @@
 title: Advent Calender
 menu:
   sidebar:
-    name: Advent Calender
+    name: Advent Calender 参加記事
     identifier: advent-calender
     weight: 1
 ---

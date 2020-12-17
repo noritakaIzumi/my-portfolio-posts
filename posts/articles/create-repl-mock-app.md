@@ -6,12 +6,6 @@ hero: /images/posts/Moby-logo.png
 news_keywords:
   - Docker
   - Docker in Docker
-menu:
-  sidebar:
-    name: Docker in Docker
-    identifier: docker-in-docker
-    parent: advent-calender-2020
-    weight: 20201225
 ---
 
 {{< alert type="info" >}}

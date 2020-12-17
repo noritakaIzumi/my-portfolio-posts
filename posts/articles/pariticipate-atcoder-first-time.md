@@ -7,12 +7,6 @@ news_keywords:
   - Python
   - Programming
   - プログラミング
-menu:
-  sidebar:
-    name: 競プロ初参加
-    identifier: pariticipate-atcoder-first-time
-    parent: advent-calender-2020
-    weight: 20201210
 ---
 
 {{< alert type="info" >}}
