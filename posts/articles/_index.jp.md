@@ -2,7 +2,7 @@
 title: Articles
 menu:
   sidebar:
-    name: Articles 【技術のこと】
+    name: 技術記事
     identifier: articles
     weight: 1
 ---
