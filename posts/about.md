@@ -1,7 +1,7 @@
 ---
-title: "サイトのプライバシーポリシーについて"
+title: "サイトのプライバシーポリシーについて Privacy Policy"
 date: 2020-11-04T11:07:11+09:00
-description: プライバシーポリシー
+description: プライバシーポリシー。Privacy Policy.
 menu:
   sidebar:
     name: プライバシーポリシー
@@ -9,14 +9,21 @@ menu:
     weight: 999
 ---
 
-## Google Analytics について
+## Google Analytics について Google Analytics
 
 Fairy Select（以後、当サイト）では、 <mark>Google アナリティクス</mark> により、当サイトを訪問された方のアクセス情報を計測させていただいております。
+
+On this site, we use <mark>Google Analytics</mark> to measure the access information of visitors.
 
 Google アナリティクスは Cookie を使用してデータを収集しています。このデータは匿名で収集されており、個人を特定するものではありません。
 Google アナリティクスにより得られました情報は、当サイトのコンテンツを充実させる目的で使用させていただきます。
 
+Google Analytics uses cookies to collect data. This data is collected anonymously and is not personally identifiable.
+The information obtained by Google Analytics will be used for the purpose of enriching the content of this site.
+
 なお、 Google アナリティクスによるデータ利用を希望されない方は、以下のリンクより <mark>Google アナリティクス オプトアウト アドオン</mark> をインストールするか、お使いのブラウザで Cookie を無効にしてください。
+
+If you do not wish to use data with Google Analytics, please install the Google Analytics opt-out add-on from the link below or disable cookies in your browser.
 
 https://tools.google.com/dlpage/gaoptout
 
@@ -24,40 +31,72 @@ https://tools.google.com/dlpage/gaoptout
 
 > Google ポリシーと規約については [こちら](https://policies.google.com/technologies/ads) をご覧ください。
 
-## Disqus について
+- [Learn more about the Google Analytics Terms of Service.](https://marketingplatform.google.com/about/analytics/terms/jp/)
+
+- [Learn more about Google policies and terms.](https://policies.google.com/technologies/ads)
+
+## Disqus について Disqus
 
 当サイトのブログにおいては、 <mark>Disqus</mark> を使用して記事ページ内で議論を行える場を設けております。
 Disqus へユーザー登録、または Facebook, Twitter, Google のアカウントを利用してログインしていただくことでご利用いただけます。
 
+In the blog of this site, we have set up a place where you can discuss in the article page using <mark>Disqus</mark>.
+You can use it by registering as a user with Disqus or logging in using your Facebook, Twitter, or Google account.
+
 Disqus も Google アナリティクスと同様に Cookie を使用し、使用状況の収集を行っています。
 Disqus の使用状況を通してブラウザにターゲット広告が配信されることがあります。
 
+Disqus, like Google Analytics, uses cookies to collect usage.
+Targeted ads may be served to your browser throughout your Disqus usage.
+
 Disqus によるターゲット広告を拒否したい場合、以下のページからオプトアウト設定を行うか、お使いのブラウザで Cookie を無効にしてください。
+
+If you want to reject targeted ads from Disqus, please opt out from the page below or disable cookies in your browser.
 
 https://disqus.com/data-sharing-settings/
 
-※なお、ターゲット広告を拒否した場合、サービス、パートナーサイト、またはサードパーティサイトとのやり取りに基づいてターゲットにされることはありませんが、年齢や性別、その他の人口統計情報などの情報に基づいた広告が引き続き配信される場合があります。
+> なお、ターゲット広告を拒否した場合、サービス、パートナーサイト、またはサードパーティサイトとのやり取りに基づいてターゲットにされることはありませんが、年齢や性別、その他の人口統計情報などの情報に基づいた広告が引き続き配信される場合があります。
 
-> Disqus のプライバシーポリシーについては [こちら](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) をご覧ください。
+> Please note that if you reject targeted ads, you will not be targeted based on interactions with services, partner sites, or third-party sites, but ads based on information such as age, gender, and other demographic information will be posted. It may continue to be delivered.
 
-## 当サイト内ブログについて
+Disqus のプライバシーポリシーについては [こちら](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) をご覧ください。
+
+[Learn more about Disqus' privacy policy.](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy)
+
+## 当サイト内ブログについて On this site
 
 当サイトによって生じた損害等の一切の責任を負いかねます。
+
+We are not responsible for any damage caused by this site.
 
 当サイト内ブログに記載されている技術記事や日記には、古い情報や私 Noritaka IZUMI の独自な見解が含まれていることがあります。
 できる限り正確な情報を提供するように努めておりますが、これは正確性や安全性を保障するものではありません。
 
+The technical articles and diaries posted on our blog may contain outdated information and my own views of Noritaka IZUMI.
+We strive to provide as accurate information as possible, but this does not guarantee accuracy or safety.
+
 また、当サイトからリンクで移動したサイトで提供される情報、サービス等についても一切の責任を負いかねますので、あらかじめご了承ください。
 
-## 著作権について
+In addition, please note that we are not responsible for the information, services, etc. provided on the site linked from this site.
+
+## 著作権について Copyright
 
 当サイトで掲載している文章につきましては、作者が私 Noritaka IZUMI であるという情報を併記することを前提に引用・転載していただいて構いません。
 画像に関しましては無断転載を禁止します。
 
+You may quote or reprint the text posted on this site on the assumption that the author is I, Noritaka IZUMI.
+Unauthorized reproduction of images is prohibited.
+
 当ブログは著作権や肖像権の侵害を目的としたものではありません。著作権や肖像権に関して問題がございましたら、メールまたは Disqus の議論にてご連絡ください。対応いたします。
 
-## リンクについて
+This blog is not intended to infringe copyright or portrait rights. If you have any copyright or portrait rights issues, please contact us via email or Disqus discussion. I will correspond.
+
+## リンクについて Links
 
 当ブログのトップページ、ブログの記事・各記事の一覧についてはリンクフリーです。
 
+Links are free for the top page of this blog, blog articles, and a list of each article.
+
 なお、インラインフレームや PDF ファイル、画像への直リンクは禁止します。
+
+Direct links to inline frames, PDF files, and images are prohibited.
