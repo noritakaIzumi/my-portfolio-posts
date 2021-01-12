@@ -2,7 +2,6 @@
 title: "カレンダーの英語のスペル、正しく覚えていますか？"
 date: 2020-12-18T20:00:19+09:00
 description: カレンダーのスペルを今まで間違って覚えていました。恥ずかしい。
-hero: /images/posts/calender_aseru_man.png
 news_keywords:
   - カレンダー
   - Calendar
@@ -36,6 +35,6 @@ news_keywords:
 
 `Advent Calendar` とかはコピペして書いていたので大丈夫だったんですが、 `Calender` でググって調べたときにこんなのが出てきたもんだから :sweat_drops:
 
-![Calender Typo](/images/posts/calender-typo.png)<!-- @IGNORE PREVIOUS: link -->
+![Calender Typo](images/calender-typo.png)<!-- @IGNORE PREVIOUS: link -->
 
 サーバー作業で typo は禁物です、気を付けましょう :wink: （どの口が言う）

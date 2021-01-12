@@ -2,7 +2,6 @@
 title: "私が集中力を付けるために何をやっていたかという話"
 date: 2020-11-05T19:22:41+09:00
 description: 小さいころやっていたそろばんのことについて軽く話しています。
-hero: /images/posts/abacus.jpeg
 news_keywords:
   - そろばん
   - 珠算

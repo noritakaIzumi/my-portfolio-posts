@@ -2,7 +2,6 @@
 title: "Docker in Docker を体験する～ブラウザでコードを書いて実行するアプリを Docker で作ってみた～"
 date: 2020-12-24T07:00:00+09:00
 description: ブラウザでコードを書いてすぐに実行できる環境を作ってみようの回です。その中で Docker in Docker の構造を使うことになりました。
-hero: /images/posts/Moby-logo.png
 news_keywords:
   - Docker
   - Docker in Docker
@@ -50,7 +49,7 @@ Docker が入っているコンテナです。
 
 また、このコンテナに Python + FastAPI の組み合わせで API サーバを構築し、 php-apache コンテナからのリクエストを受けます。
 
-![Coding Drills Docker Container](/images/posts/coding-drills-docker-container.png)<!-- @IGNORE PREVIOUS: link -->
+![Coding Drills Docker Container](images/coding-drills-docker-container.png)
 
 ---
 

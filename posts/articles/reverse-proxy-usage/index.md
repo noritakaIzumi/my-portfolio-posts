@@ -27,7 +27,7 @@ news_keywords:
 
 喧嘩の末、ダミーサイトが `localhost` を取り、他のアプリたちは仕方なく VirtualBox で VM を立ち上げ、各自の IP を `hosts` ファイルに書いてもらうという、古い方法を使うことになりました。
 
-![Port toriaikko](/images/posts/port-toriaikko.png)<!-- @IGNORE PREVIOUS: link -->
+![Port toriaikko](images/port-toriaikko.png)<!-- @IGNORE PREVIOUS: link -->
 
 仲良く Docker を使うためにはどうすればよかったのでしょうか。
 
@@ -67,7 +67,7 @@ Docker Desktop で開発するということを前提に次の 2 通りの方�
 私自身、リバースプロキシの理解には [こちらの記事](https://qiita.com/zawawahoge/items/a931de1464ccaa228551) を参考にさせていただきました。
 {{< /alert >}}
 
-![Reverse proxy figure](/images/posts/reverse-proxy-figure.png)<!-- @IGNORE PREVIOUS: link -->
+![Reverse proxy figure](images/reverse-proxy-figure.png)<!-- @IGNORE PREVIOUS: link -->
 
 `hosts` ファイルの中身は :one: の方法と同じです。
 
@@ -241,7 +241,7 @@ docker-compose up -d
 
 ブラウザで `http://site-c/` にアクセスして 2 秒くらい待つと...
 
-![Reverse proxy screenshot](/images/posts/reverse-proxy-screenshot.png)<!-- @IGNORE PREVIOUS: link -->
+![Reverse proxy screenshot](images/reverse-proxy-screenshot.png)<!-- @IGNORE PREVIOUS: link -->
 
 表示できました！ :tada:
 

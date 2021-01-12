@@ -2,7 +2,6 @@
 title: "たった 1 行だけど OSS にコミットした"
 date: 2020-11-14T11:35:43+09:00
 description: OSS にコミットした経験のお話。ググって不具合を特定するところから、リポジトリをフォークしてコミット、プルリクエストを送るまでの経緯について。また、 OSS を利用するうえでの注意点。
-hero: /images/posts/oss-commit.png
 news_keywords:
   - OSS
   - コミッター
@@ -17,7 +16,7 @@ news_keywords:
 
 ## :bug: 見つけた不具合
 
-![Table of contents](/images/posts/table-of-contents.png)<!-- @IGNORE PREVIOUS: link -->
+![Table of contents](images/table-of-contents.png)<!-- @IGNORE PREVIOUS: link -->
 
 ブログの記事を PC で表示しているときに右側に表示されている `Table of Contents` の欄。クリックするとその項目のところまでヌメっと動くのですが、
 
@@ -51,11 +50,11 @@ OSS にプルリクエストを送る流れは以下のようになります。
 
 - OSS のソースコードをフォークする
 
-![Fork](/images/posts/fork.png)<!-- @IGNORE PREVIOUS: link -->
+![Fork](images/fork.png)<!-- @IGNORE PREVIOUS: link -->
 
 そうすると自分のところにリポジトリをクローンしたような形になります。
 
-![Clone after fork](/images/posts/clone-after-fork.png)<!-- @IGNORE PREVIOUS: link -->
+![Clone after fork](images/clone-after-fork.png)<!-- @IGNORE PREVIOUS: link -->
 
 - 自分のリポジトリで新しくブランチを作成してソースコードをいじる
 
@@ -67,7 +66,7 @@ OSS にプルリクエストを送る流れは以下のようになります。
 
 見事マージされて、 OSS に貢献することができました。
 
-![Pull request](/images/posts/pull-request.png)<!-- @IGNORE PREVIOUS: link -->
+![Pull request](images/pull-request.png)<!-- @IGNORE PREVIOUS: link -->
 
 ## :muscle: 貢献するのは意外と難しくない
 

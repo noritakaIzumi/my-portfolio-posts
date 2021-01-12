@@ -2,7 +2,6 @@
 title: "Advent Calendar 2019 参加記事まとめ"
 date: 2020-12-26T00:00:00+09:00
 description: Advent Calendar 2020 に参加した記事のまとめです。 PHP や競技プログラミング、本番環境でやらかしちゃった人のカレンダーなどに参加しました。
-hero: /images/posts/eto/eto_moji_12i.png
 news_keywords:
   - Advent Calendar
   - 2019

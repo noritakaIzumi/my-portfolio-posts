@@ -2,7 +2,6 @@
 title: "ポートフォリオサイトはじめました"
 date: 2020-11-02T11:35:53+09:00
 description: 初投稿。サイトの説明、サイトを作るに至った経緯など。
-hero: /images/posts/programming.jpg
 news_keywords:
   - ポートフォリオ
   - Hugo

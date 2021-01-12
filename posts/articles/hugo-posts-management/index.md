@@ -2,7 +2,6 @@
 title: "Hugo で立ち上げたブログの記事をカッコよく管理する"
 date: 2020-11-10T16:15:37+09:00
 description: Hugo でブログを立ち上げて Git 管理すると、記事を追加するたびにコミットログが積まれて美しくありません。今回はそれを GitLab CI/CD で解消する方法を考えます。
-hero: /images/posts/commit-log.png
 news_keywords:
   - Hugo
   - ブログ
@@ -33,7 +32,7 @@ CI/CD を使ってブログ記事のリポジトリをクローン・ビルド�
 記事を 3 回加筆修正しただけでこんなにコミットログが積まれます:cry:
 {{< /alert >}}
 
-![Commit logs](/images/posts/commit-log.png)<!-- @IGNORE PREVIOUS: link -->
+![Commit logs](images/commit-log.png)<!-- @IGNORE PREVIOUS: link -->
 
 そこで考えたのが...
 
@@ -92,7 +91,7 @@ GitLab における環境変数は、リポジトリのページから 「Settin
 
 詳しくは [こちら](https://docs.gitlab.com/ee/ci/variables/README.html#custom-environment-variables)
 
-![Set environment variables in GitLab](/images/posts/gitlab-environment-variables.png)<!-- @IGNORE PREVIOUS: link -->
+![Set environment variables in GitLab](images/gitlab-environment-variables.png)<!-- @IGNORE PREVIOUS: link -->
 
 ## :clock4: 定期実行も設定する
 
@@ -102,7 +101,7 @@ GitLab にはパイプラインを定期実行してくれる便利な機能が�
 
 リポジトリのページから 「CI / CD → Schedules → New schedule」と進み、日本時間毎朝 4 時にパイプラインを実行するように設定してみます。
 
-![Schedule a new pipeline](/images/posts/schedule-a-new-pipeline.png)<!-- @IGNORE PREVIOUS: link -->
+![Schedule a new pipeline](images//schedule-a-new-pipeline.png)<!-- @IGNORE PREVIOUS: link -->
 
 これで定期実行も完成です。
 
