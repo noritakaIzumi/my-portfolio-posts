@@ -2,7 +2,6 @@
 title: "会社に新しい人が入ってきたとき"
 date: 2020-11-26T19:57:22+09:00
 description: 会社に新しい人が入ってきたとき、その人に対してどういう対応をするのか、自分なりの考えをまとめてみます。
-hero: /images/posts/friends_hagemasu_businessman.png
 news_keywords:
   - ポエム
   - 言葉使い
