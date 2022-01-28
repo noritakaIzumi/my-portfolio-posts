@@ -2,12 +2,6 @@
 title: "シュクメルリのカップラーメンを食べた"
 date: 2021-01-24T14:32:35+09:00
 description: 新発売のシュクメルリ鍋風ヌードルを食べました。その感想です。
-news_keywords:
-  - コンビニ
-  - 松屋
-  - シュクメルリ
-  - カップラーメン
-  - 食レポ
 ---
 
 :ramen::ramen::ramen::ramen::ramen::ramen::ramen::ramen::ramen::ramen:

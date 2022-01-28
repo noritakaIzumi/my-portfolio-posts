@@ -2,9 +2,6 @@
 title: "Docker in Docker を体験する～ブラウザでコードを書いて実行するアプリを Docker で作ってみた～"
 date: 2020-12-24T07:00:00+09:00
 description: ブラウザでコードを書いてすぐに実行できる環境を作ってみようの回です。その中で Docker in Docker の構造を使うことになりました。
-news_keywords:
-  - Docker
-  - Docker in Docker
 ---
 
 {{< alert type="info" >}}

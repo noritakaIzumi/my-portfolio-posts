@@ -2,11 +2,6 @@
 title: "電卓をチームで開発してみよう～1. 開発条件"
 date: 2021-01-22T00:00:00+09:00
 description: 電卓をチーム開発する際の役割分担を考える記事です。
-news_keywords:
-  - チーム開発
-  - Team Development
-  - 電卓
-  - Calculator
 menu:
   sidebar:
     name: 1. 開発条件

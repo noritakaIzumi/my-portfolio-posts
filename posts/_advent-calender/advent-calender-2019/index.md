@@ -2,10 +2,6 @@
 title: "Advent Calendar 2019 参加記事まとめ"
 date: 2020-12-26T00:00:00+09:00
 description: Advent Calendar 2020 に参加した記事のまとめです。 PHP や競技プログラミング、本番環境でやらかしちゃった人のカレンダーなどに参加しました。
-news_keywords:
-  - Advent Calendar
-  - 2019
-  - free_dev_com
 menu:
   sidebar:
     name: 2019

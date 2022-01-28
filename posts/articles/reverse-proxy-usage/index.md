@@ -2,11 +2,6 @@
 title: "とある開発環境の反向代理（リバースプロキシ）"
 date: 2020-11-29T00:03:21+09:00
 description: 某広告効果測定の会社で開発環境の Docker 化を進めていた時にリバースプロキシの案が出てきたので、それについて振り返ります。
-news_keywords:
-  - 開発環境
-  - Docker
-  - Reverse Proxy
-  - リバースプロキシ
 ---
 
 ## :mailbox_with_mail: 背景

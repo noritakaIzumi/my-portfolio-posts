@@ -2,11 +2,6 @@
 title: "電卓をチームで開発してみよう～3. 開発者 1 のコーディング"
 date: 2021-02-05T00:00:00+09:00
 description: 電卓をチーム開発する際の役割分担を考える記事です。
-news_keywords:
-  - チーム開発
-  - Team Development
-  - 電卓
-  - Calculator
 menu:
   sidebar:
     name: 3. 開発者 1

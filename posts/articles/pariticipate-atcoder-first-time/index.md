@@ -2,11 +2,6 @@
 title: "AtCoder のプログラミングコンテストに初めて参加しました"
 date: 2020-12-05T23:57:19+09:00
 description: AtCoder のプログラミングコンテストに初めて参加しました。感想やコードを書く上で気を付けたことなどを書きます。
-news_keywords:
-  - AtCoder
-  - Python
-  - Programming
-  - プログラミング
 ---
 
 {{< alert type="info" >}}

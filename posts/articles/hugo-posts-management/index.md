@@ -2,13 +2,6 @@
 title: "Hugo で立ち上げたブログの記事をカッコよく管理する"
 date: 2020-11-10T16:15:37+09:00
 description: Hugo でブログを立ち上げて Git 管理すると、記事を追加するたびにコミットログが積まれて美しくありません。今回はそれを GitLab CI/CD で解消する方法を考えます。
-news_keywords:
-  - Hugo
-  - ブログ
-  - GitLab
-  - CI
-  - CD
-  - Git
 ---
 
 ## :bulb: まとめ
