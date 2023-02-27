@@ -14,7 +14,7 @@ PHP で複数バージョンを切り替える方法は調べるとたくさん�
 
 まずは Dockerfile を作成するためのディレクトリを作成します。
 
-```shell
+```bash
 # 今回はホームディレクトリ直下に作成します
 mkdir -p ~/docker-php
 cd ~/docker-php
@@ -45,7 +45,7 @@ FROM php:8.0
 今回は `~/.bash_aliases` に以下を追記します。
 環境によっては `~/.bashrc` や `~/.bash_profile` となることもあります。
 
-```shell
+```bash
 # Docker
 # ファイル書き込みの際に root 権限にならないよう、ユーザを指定する
 alias dkrun="docker run --rm -it -u $(id -u):$(id -g)"
@@ -96,7 +96,7 @@ done
 
 最新の PHP が実行できるか試してみましょう。
 
-```shell
+```bash
 dphp --version
 ```
 
@@ -117,13 +117,13 @@ Zend Engine v4.2.3, Copyright (c) Zend Technologies
 
 私が試した時点では zip モジュールは標準で入っていないので、以下のコマンドを実行しても何も出力されないはずです。
 
-```shell
+```bash
 dphp -m | grep zip
 ```
 
 引数に `bash` を渡すことで、コンテナにログインし、必要なコマンドをリハーサルします。
 
-```shell
+```bash
 dphp bash
 ```
 
@@ -139,13 +139,13 @@ RUN apt update && \
 
 イメージをアップデートします。
 
-```shell
+```bash
 dphp --update
 ```
 
 もう一度モジュールの存在を確認します。
 
-```shell
+```bash
 dphp -m | grep zip
 ```
 
@@ -157,7 +157,7 @@ PHP の特定バージョンをアンインストールする場合、Docker イ
 
 例えば 8.1 をアンインストールする場合は以下のコマンドを実行します。
 
-```shell
+```bash
 docker rmi $(docker images --quiet --filter=reference=local/php:8.1)
 ```
 

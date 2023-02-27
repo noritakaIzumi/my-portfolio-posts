@@ -145,7 +145,7 @@ print "Perl Version: $^V<br>";
 
 WSL 等の Linux 上にファイルを置いている場合は実行権限を付与してください。
 
-```shell
+```sh
 chmod a+x example/cgi-bin/index.cgi
 ```
 
@@ -159,7 +159,7 @@ Hello HTML!
 
 ファイルを作成したらコンテナを立ち上げて動作確認をします。
 
-```shell
+```sh
 docker-compose up -d --build
 ```
 
@@ -173,6 +173,6 @@ Perl Version: v5.36.0
 
 動作確認後はコンテナを終了します。
 
-```shell
+```sh
 docker-compose down --remove-orphans -v
 ```
