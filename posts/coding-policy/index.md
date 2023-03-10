@@ -1,10 +1,10 @@
 ---
-title: 🧑‍💻コーディングで気を付けるところ
+title: 🧑‍💻コーディングポリシー
 description: コーディングで気を付けるところやこだわっているところ。
 date: 2023-03-05 07:38:00+09:00
 menu:
   sidebar:
-    name: 🧑‍💻コーディングで気を付けるところ
+    name: 🧑‍💻コーディングポリシー
     identifier: coding-policy
     weight: 11
 ---
