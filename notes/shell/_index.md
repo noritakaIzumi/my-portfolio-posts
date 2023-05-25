@@ -1,5 +1,5 @@
 ---
-title: Notes
+title: Shell Notes
 menu:
   notes:
     name: Shell

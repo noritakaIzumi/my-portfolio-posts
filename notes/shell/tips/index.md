@@ -1,5 +1,6 @@
 ---
 title: Tips
+weight: 10
 menu:
   notes:
     name: Tips

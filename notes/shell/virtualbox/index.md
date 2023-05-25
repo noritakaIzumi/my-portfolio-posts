@@ -1,9 +1,10 @@
 ---
 title: VirtualBox
+weight: 10
 menu:
   notes:
     name: VirtualBox
-    identifier: notes-shell-virtual-box
+    identifier: notes-shell-virtualbox
     parent: notes-shell
     weight: 10
 ---
