@@ -20,7 +20,7 @@ Ref: https://serverfault.com/questions/283294/how-to-read-in-n-random-characters
 # the first argument: char count
 randpw() {
   local COUNT=$1
-  head -c 1000 /dev/urandom | tr -dc '!-~' | fold -w "${COUNT}" | head -n 1
+  head -c 1000 /dev/random | tr -dc '!-~' | fold -w "${COUNT}" | head -n 1
 }
 
 ```
