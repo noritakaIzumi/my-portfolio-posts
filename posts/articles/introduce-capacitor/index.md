@@ -1,8 +1,13 @@
 ---
 draft: true
 title: "Web エンジニアの私がたったの 4 時間で Android エンジニアになった方法 [Capacitor]"
-date: "2023-11-10T06:12:27+09:00"
+date: "2023-12-11T07:00:00+09:00"
 description: Capacitor というツールを使用して、Web アプリケーションから Android/iOS アプリを作成することができます。
+---
+
+こちらの記事は [トラストバンク Advent Calendar 2023](https://qiita.com/advent-calendar/2023/trustbank)
+11 日目の記事です。
+
 ---
 
 普段は Web エンジニアとして開発をしている私ですが、いつかモバイルアプリを作ってみたいと思っていました。  
@@ -11,12 +16,25 @@ description: Capacitor というツールを使用して、Web アプリケー�
 そんな中、Capacitor というツールが Web アプリケーションを簡単にモバイルアプリを作れると知り試してみたところ、
 確かに簡単だと感じたので、紹介させていただきます。
 
-https://capacitorjs.jp/
+[Capacitor - by Ionic: Webアプリをクロスプラットフォームに展開](https://capacitorjs.jp/)
+
+## 書くこと・書かないこと
+
+書くこと
+
+- Capacitor の概要
+- 既存の Web アプリに Capacitor を追加して動作確認する方法
+
+書かないこと
+
+- アプリへの署名方法
+- アプリストアへの登録方法
+- 他ツールとの比較
 
 ## Capacitor とは
 
 Web アプリから Android/iOS や PWA で動作するアプリを作れるライブラリです。  
-Android/iOS で必要になるカメラや位置情報、通知などへアクセスできる機能も提供されています。
+Ionic 社によって開発されており、Android/iOS で必要になるカメラや位置情報、通知などへアクセスできる機能も提供されています。
 
 ## 環境
 
@@ -42,7 +60,7 @@ Android Studio を起動し、トップ画面が表示されたら、**Customize
 
 ### 既存の Web アプリに Capacitor をインストール・設定する
 
-既存の Web アプリとして、今回は他の方のリポジトリを拝借させていただきます🙇‍♂️
+既存の Web アプリとして、今回は他の方のリポジトリを拝借させていただきます :bowing_man:
 
 https://github.com/seanmiles/example-webpage
 
@@ -156,3 +174,30 @@ $ npx cap sync
 {{< alert type="info" >}}
 Web のコードを変更した際は毎回この `npx cap sync` を実行します。
 {{</ alert >}}
+
+### 動作確認する
+
+以下のコマンドでエミュレータを起動し、動作確認します。
+
+```bash
+npx cap run android
+```
+
+Web で表示されていたものが画面にちゃんと表示されました :tada:
+
+![emulate-app.png](emulate-app.png)
+
+## Capacitor は Android のソースを Git 管理下に置く
+
+また、既存の Web アプリを変換するだけなら Android アプリのソースコードは Git 管理下に置く必要がないはずなのですが、
+Capacitor では Git 管理下となっています。  
+これにより、Capacitor でアプリを変換した後に細かな調整をする・Capacitor でできないことをコードの直接編集で実現したいときに、
+その変更を Git に反映することが可能となります。
+
+## まとめ
+
+いかがでしたでしょうか？ Capacitor は Web エンジニアにとって非常に扱いやすいツールです。  
+今回この記事を書くにあたって、本来 Android アプリに必要な Java, Kotlin, Dart などの言語は習得していません。
+基本的に今あなたがお持ちの知識だけでアプリが作れます。
+
+みなさんもぜひ Capacitor で Android アプリエンジニアデビューへの道を歩みましょう :smiling_face_with_three_hearts:
