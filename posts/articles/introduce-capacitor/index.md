@@ -6,7 +6,7 @@ description: Capacitor というツールを使用して、Web アプリケー�
 ---
 
 こちらの記事は [トラストバンク Advent Calendar 2023](https://qiita.com/advent-calendar/2023/trustbank)
-11 日目の記事です。
+の 11 日目の記事です。
 
 ---
 
@@ -27,9 +27,8 @@ description: Capacitor というツールを使用して、Web アプリケー�
 
 書かないこと
 
-- アプリへの署名方法
-- アプリストアへの登録方法
-- 他ツールとの比較
+- Android Studio の使い方
+- アプリへの署名方法・アプリストアへの登録方法
 
 ## Capacitor とは
 
@@ -181,6 +180,21 @@ Web のコードを変更した際は毎回この `npx cap sync` を実行しま
 
 ```bash
 npx cap run android
+```
+
+ビルド中を示す出力の後、エミュレータが立ち上がります。
+
+```text
+$ npx cap run android
+√ Copying web assets from www to android\app\src\main\assets\public in 25.85ms
+√ Creating capacitor.config.json in android\app\src\main\assets in 2.61ms
+[info] Inlining sourcemaps
+√ copy android in 69.40ms
+√ Updating Android plugins in 1.88ms
+√ update android in 350.20ms
+√ Please choose a target device: » Pixel 3 API 30 (emulator) (Pixel_3_API_30)
+√ Running Gradle build in 71.63s
+√ Deploying app-debug.apk to Pixel_3_API_30 in 65.87s
 ```
 
 Web で表示されていたものが画面にちゃんと表示されました :tada:
