@@ -1,4 +1,11 @@
 update_blog:
+  stage: build
+  only:
+    refs:
+      - master
+    changes:
+      - notes/**/*
+      - posts/**/*
   trigger:
     project: noritakaIzumi/my-portfolio
     branch: master
