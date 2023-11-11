@@ -23,7 +23,7 @@ menu:
 ## 7 日目
 
 {{< alert type="success" >}}
-[User JavaScript and CSS (Chrome 拡張機能) を使って Redmine をカスタマイズしてみた - Qiita](https://qiita.com/noritakaIzumi/items/870558c…)
+[User JavaScript and CSS (Chrome 拡張機能) を使って Redmine をカスタマイズしてみた - Qiita](https://qiita.com/noritakaIzumi/items/870558ced1088b4af16f)
 {{</ alert >}}
 
 ## 9 日目

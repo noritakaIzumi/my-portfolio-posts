@@ -1,8 +1,8 @@
 ---
-title: Advent Calender
+title: Advent Calendar
 menu:
   sidebar:
-    name: Advent Calender 参加記事
+    name: Advent Calendar 参加記事
     identifier: advent-calendar
     weight: 1
 ---
