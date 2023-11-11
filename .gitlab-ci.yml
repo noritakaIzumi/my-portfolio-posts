@@ -1,0 +1,4 @@
+update_blog:
+  trigger:
+    project: noritakaIzumi/my-portfolio
+    branch: master
