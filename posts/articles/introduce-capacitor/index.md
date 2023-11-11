@@ -1,7 +1,6 @@
 ---
-draft: true
-title: "Web エンジニアの私がたったの 4 時間で Android エンジニアになった方法 [Capacitor]"
-date: "2023-12-11T07:00:00+09:00"
+title: "Web エンジニアの私がたったの 4 時間で Android エンジニアになった方法"
+date: "2023-12-09T06:12:27+09:00"
 description: Capacitor というツールを使用して、Web アプリケーションから Android/iOS アプリを作成することができます。
 ---
 
