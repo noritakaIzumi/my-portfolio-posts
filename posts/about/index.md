@@ -35,33 +35,16 @@ https://tools.google.com/dlpage/gaoptout
 
 - [Learn more about Google policies and terms.](https://policies.google.com/technologies/ads)
 
-## Disqus について Disqus
+## ブログ記事内のコメント機能について Comment on blog posts
 
-当サイトのブログにおいては、 <mark>Disqus</mark> を使用して記事ページ内で議論を行える場を設けております。
-Disqus へユーザー登録、または Facebook, Twitter, Google のアカウントを利用してログインしていただくことでご利用いただけます。
+当サイトのブログにおいては、コメント機能に <mark>[giscus](https://giscus.app/ja)</mark> を使用しております。  
+giscus はコメント管理や通知のため、利用には GitHub アカウントの連携が必要です。  
+詳しくは giscus の [プライバシーポリシー（英語）](https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md) をご覧ください。
 
-In the blog of this site, we have set up a place where you can discuss in the article page using <mark>Disqus</mark>.
-You can use it by registering as a user with Disqus or logging in using your Facebook, Twitter, or Google account.
+In the blog of this site, we have a comment platform by <mark>[giscus](https://giscus.app/en)</mark>.  
+Giscus uses your GitHub account for comment management and notifications.
 
-Disqus も Google アナリティクスと同様に Cookie を使用し、使用状況の収集を行っています。
-Disqus の使用状況を通してブラウザにターゲット広告が配信されることがあります。
-
-Disqus, like Google Analytics, uses cookies to collect usage.
-Targeted ads may be served to your browser throughout your Disqus usage.
-
-Disqus によるターゲット広告を拒否したい場合、以下のページからオプトアウト設定を行うか、お使いのブラウザで Cookie を無効にしてください。
-
-If you want to reject targeted ads from Disqus, please opt out from the page below or disable cookies in your browser.
-
-https://disqus.com/data-sharing-settings/
-
-> なお、ターゲット広告を拒否した場合、サービス、パートナーサイト、またはサードパーティサイトとのやり取りに基づいてターゲットにされることはありませんが、年齢や性別、その他の人口統計情報などの情報に基づいた広告が引き続き配信される場合があります。
-
-> Please note that if you reject targeted ads, you will not be targeted based on interactions with services, partner sites, or third-party sites, but ads based on information such as age, gender, and other demographic information will be posted. It may continue to be delivered.
-
-Disqus のプライバシーポリシーについては [こちら](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) をご覧ください。
-
-[Learn more about Disqus' privacy policy.](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy)
+[Privacy policy of giscus](https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md)
 
 ## 当サイト内ブログについて On this site
 
