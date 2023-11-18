@@ -5,6 +5,11 @@ description: CodeIgniter におけるバリデーションルールの設定ミ�
    バリデーションルールの連想配列を生成するためのクラスを用意しつつ、エディタの自動補完を利用します。
 ---
 
+こちらの記事は [PHP Advent Calendar 2023](https://qiita.com/advent-calendar/2023/php)
+の 8 日目の記事です。
+
+---
+
 {{< alert type="success" >}}
 今回紹介しているコードはこちらにも記載しています。  
 https://github.com/noritakaIzumi/codeigniter-validation-extended/tree/20231118/Validator
