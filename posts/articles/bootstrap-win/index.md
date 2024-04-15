@@ -227,7 +227,7 @@ main   https://github.com/ScoopInstaller/Main   2024/04/14 19:33:46      1313
 ```powershell
 scoop update
 $buckets = scoop bucket list
-if ("main" in $buckets.name)
+if ("main" -notin $buckets.name)
 {
     scoop bucket add main
 }
@@ -298,7 +298,7 @@ foreach ($dependency in $dependencies)
 # scoop
 scoop update
 $buckets = scoop bucket list
-if ("main" in $buckets.name)
+if ("main" -notin $buckets.name)
 {
     scoop bucket add main
 }
@@ -336,3 +336,8 @@ foreach ($dependency in $dependencies)
 
 また、このようにアプリケーションのインストールを一部自動化することで、環境構築にかかる時間が短縮されるのはもちろんのこと、
 大量の新入社員向けに大量の PC をセットアップする際に情シスの負担を軽減することにも繋がるので、積極的に導入したいですね。
+
+{{< alert type="info" >}}
+私が実際に利用しているスクリプトはこちらになります。
+https://gitlab.com/noritakaIzumi/bootstrap-win
+{{< /alert >}}
