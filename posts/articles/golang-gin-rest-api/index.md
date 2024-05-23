@@ -142,12 +142,15 @@ import (
 )
 
 func TestPingRoute(t *testing.T) {
-	router := api.SetupRouter()
-
+	// given
+	r := api.SetupRouter()
 	w := httptest.NewRecorder()
 	req, _ := http.NewRequest("GET", "/ping", nil)
-	router.ServeHTTP(w, req)
 
+	// when
+	r.ServeHTTP(w, req)
+
+	// then
 	type res struct {
 		code int
 		body string
@@ -169,7 +172,7 @@ func TestPingRoute(t *testing.T) {
 }
 ```
 
-{{< alert type="warning" >}}
+{{< alert type="success" >}}
 Go の testing ライブラリには assert メソッドがありません。その理由については以下の記事が参考になります。  
 <https://qiita.com/Jxck/items/8717a5982547cfa54ebc>
 {{< /alert >}}
@@ -189,3 +192,96 @@ $ go test
 PASS
 ok      example/web-service-gin 0.005s
 ```
+
+### アルバム一覧を取得する
+
+アルバム一覧を取得するため、`/albums` に GET リクエストを送るとアルバム一覧が返ってくるような処理を作成します。
+
+#### 実装
+
+`SetupRouter()` に以下のルーティングを追加します。
+
+```go
+	r.GET("/albums", getAlbums)
+```
+
+今回はアルバムを変数に定義し、変数の内容をそのままレスポンスする内容にします。
+
+```go
+// album represents data about a record album.
+type album struct {
+	ID     string  `json:"id"`
+	Title  string  `json:"title"`
+	Artist string  `json:"artist"`
+	Price  float64 `json:"price"`
+}
+
+// albums slice to seed record album data.
+var albums = []album{
+	{ID: "1", Title: "Blue Train", Artist: "John Coltrane", Price: 56.99},
+	{ID: "2", Title: "Jeru", Artist: "Gerry Mulligan", Price: 17.99},
+	{ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
+}
+
+// getAlbums responds with the list of all albums as JSON.
+func getAlbums(c *gin.Context) {
+	c.JSON(http.StatusOK, albums)
+}
+```
+
+#### テストコード
+
+`encoding/json` と `github.com/go-test/deep` をインポートしたうえで以下のコードを追加します。
+
+```go
+type album map[string]interface{}
+
+func TestGetAlbums(t *testing.T) {
+	// given
+	r := api.SetupRouter()
+	w := httptest.NewRecorder()
+	req, _ := http.NewRequest("GET", "/albums", nil)
+
+	// when
+	r.ServeHTTP(w, req)
+
+	// then
+	var gotBody []album
+	if err := json.Unmarshal(w.Body.Bytes(), &gotBody); err != nil {
+		t.Error("Failed to unmarshal json string")
+		t.Logf("got: %s\n", w.Body.String())
+	}
+	type res struct {
+		code int
+		body []album
+	}
+	want := res{
+		code: http.StatusOK,
+		body: []album{
+			{"id": "1", "title": "Blue Train", "artist": "John Coltrane", "price": 56.99},
+			{"id": "2", "title": "Jeru", "artist": "Gerry Mulligan", "price": 17.99},
+			{"id": "3", "title": "Sarah Vaughan and Clifford Brown", "artist": "Sarah Vaughan", "price": 39.99},
+		},
+	}
+	got := res{
+		code: w.Code,
+		body: gotBody,
+	}
+
+	if got.code != want.code {
+		t.Errorf("Status code: want %d, but got %d", want.code, got.code)
+	}
+	if diff := deep.Equal(got.body, want.body); diff != nil {
+		t.Error("Failed to assert body")
+		for _, s := range diff {
+			t.Log(s)
+		}
+	}
+}
+```
+
+{{< alert type="success" >}}
+パラメタライズの関数も Golang の標準ライブラリにはなく、「それって各テストケースに対して for 文回しているのと一緒だよね、なら
+for 文使いましょ？」ということです。  
+参考記事：<https://qiita.com/a-suenami/items/2b6ba734ef6f69068253>
+{{< /alert >}}
