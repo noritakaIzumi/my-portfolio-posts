@@ -135,10 +135,7 @@ Go では同じパッケージ内にテストを書く方法と別パッケー�
 package main_test
 
 import (
-	"encoding/json"
 	api "example/web-service-gin"
-	"fmt"
-	"github.com/go-test/deep"
 	"net/http"
 	"net/http/httptest"
 	"testing"
