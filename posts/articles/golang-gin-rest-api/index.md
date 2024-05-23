@@ -195,7 +195,7 @@ ok      example/web-service-gin 0.005s
 
 ### アルバム一覧を取得する
 
-アルバム一覧を取得するため、`/albums` に GET リクエストを送るとアルバム一覧が返ってくるような処理を作成します。
+アルバム一覧を取得するため、`/albums` に GET リクエストを送るとアルバム一覧が返ってくるような API を作成します。
 
 #### 実装
 
@@ -280,8 +280,130 @@ func TestGetAlbums(t *testing.T) {
 }
 ```
 
+### 個々のアルバムを取得する
+
+次はアルバムの ID を指定して個別にアルバム情報を取得する API を作成します。  
+例えば、ID が 1 のアルバムを取得したいときは `/album/1` に GET を送れるようにします。
+
+#### 実装
+
+`SetupRouter()` に以下のルーティングを追加します。
+
+```go
+	r.GET("/albums/:id", getAlbumByID)
+```
+
+DB に見立てた album 変数の中から目的の ID に合致するものを返却します。  
+見つからなければ NotFound とします。
+
+```go
+// getAlbumByID locates the album whose ID value matches the id
+// parameter sent by the client, then returns that album as a response.
+func getAlbumByID(c *gin.Context) {
+	id := c.Param("id")
+
+	for _, a := range albums {
+		if a.ID == id {
+			c.JSON(http.StatusCreated, a)
+			return
+		}
+	}
+	c.JSON(http.StatusNotFound, gin.H{"message": "album not found"})
+}
+```
+
+#### テストコード
+
+まずは存在する ID に対するテストです。
+
+```go
+func TestGetAlbum_forExistingAlbum(t *testing.T) {
+	type args struct {
+		id   string
+		want album
+	}
+	type tc struct {
+		name string
+		args args
+	}
+
+	tcs := []tc{
+		{name: "id:1", args: args{
+			id:   "1",
+			want: album{"id": "1", "title": "Blue Train", "artist": "John Coltrane", "price": 56.99},
+		}},
+		{name: "id:2", args: args{
+			id:   "2",
+			want: album{"id": "2", "title": "Jeru", "artist": "Gerry Mulligan", "price": 17.99},
+		}},
+		{name: "id:3", args: args{
+			id:   "3",
+			want: album{"id": "3", "title": "Sarah Vaughan and Clifford Brown", "artist": "Sarah Vaughan", "price": 39.99},
+		}},
+	}
+
+	type res struct {
+		code int
+		body album
+	}
+
+	router := api.SetupRouter()
+	for _, tt := range tcs {
+		t.Run(tt.name, func(t *testing.T) {
+			w := httptest.NewRecorder()
+			url := fmt.Sprintf("/albums/%s", tt.args.id)
+			req, _ := http.NewRequest("GET", url, nil)
+
+			router.ServeHTTP(w, req)
+
+			var gotBody album
+			if err := json.Unmarshal(w.Body.Bytes(), &gotBody); err != nil {
+				t.Error("Failed to unmarshal json string")
+				t.Logf("got: %s\n", w.Body.String())
+			}
+
+			want := res{
+				code: http.StatusCreated,
+				body: tt.args.want,
+			}
+			got := res{
+				code: w.Code,
+				body: gotBody,
+			}
+
+			if got.code != want.code {
+				t.Errorf("Status code: want %d, but got %d", want.code, got.code)
+			}
+			if diff := deep.Equal(got.body, want.body); diff != nil {
+				t.Error("Failed to assert body")
+				for _, s := range diff {
+					t.Log(s)
+				}
+			}
+		})
+	}
+}
+```
+
 {{< alert type="success" >}}
 パラメタライズの関数も Golang の標準ライブラリにはなく、「それって各テストケースに対して for 文回しているのと一緒だよね、なら
 for 文使いましょ？」ということです。  
 参考記事：<https://qiita.com/a-suenami/items/2b6ba734ef6f69068253>
 {{< /alert >}}
+
+次に、存在しない ID に対するテストです。
+
+```go
+func TestGetAlbum_forNonExistentAlbum(t *testing.T) {
+	router := api.SetupRouter()
+	w := httptest.NewRecorder()
+	url := fmt.Sprintf("/albums/%s", "4")
+	req, _ := http.NewRequest("GET", url, nil)
+
+	router.ServeHTTP(w, req)
+
+	if w.Code != http.StatusNotFound {
+		t.Errorf("Status code: want %d, but got %d", http.StatusNotFound, w.Code)
+	}
+}
+```
