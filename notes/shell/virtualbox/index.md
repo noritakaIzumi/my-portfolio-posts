@@ -1,6 +1,5 @@
 ---
 title: VirtualBox
-weight: 10
 menu:
   notes:
     name: VirtualBox
