@@ -16,3 +16,11 @@ menu:
 ぜひご覧ください :wink:
 
 ## 記事一覧
+
+### 2 日目
+
+[トラストバンク Advent Calendar 2024](https://qiita.com/advent-calendar/2024/trustbank)
+
+{{< alert type="info" >}}
+[オープンソースをゼロから作成する中で学んだこと](https://portfolio.fairy-select.com/posts/articles/open-source-development/)
+{{</ alert >}}
