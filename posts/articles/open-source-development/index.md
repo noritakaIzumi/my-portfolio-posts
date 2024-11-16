@@ -1,20 +1,27 @@
 ---
-draft: true
-title: "オープンソースを 1 から作成する中で学んだこと"
-date: "2024-11-15T08:16:32+09:00"
+title: "オープンソースをゼロから作成する中で学んだこと"
+date: "2024-11-16T16:35:32+09:00"
 description: オープンソースリポジトリを作成する中で、普段のプロダクト開発に役立ったことを紹介しています。
 ---
 
 こちらの記事は [トラストバンク Advent Calendar 2024](https://qiita.com/advent-calendar/2024/trustbank)
 の 20 日目の記事です。
 
+---
 
-みなさんはオープンソースの開発に参加したことはありますか？
+## TL;DR
 
-GitHub でならリポジトリへ Pull Request を送ってマージしてもらったり、
-リポジトリの Issue や Pull Request にコメントやレビューを書いたりなど、様々な方法で参加することができます。
+この記事では、Python 製のオープンソースパッケージをゼロから作成し、
+パッケージサイトへデプロイする過程で学んだことについて紹介しています。
+GitHub を利用したリポジトリの作成、環境管理およびパッケージビルド、複数バージョン対応、静的解析、エラーハンドリング、
+コミットログの書き方など、オープンソース開発に役立つ具体的なポイントを網羅しています。
 
-では、みなさんはオープンソースを 1 から作成して、以下のようなパッケージサイトにアップしたことがありますか？
+---
+
+みなさんはオープンソースの開発に参加したことはありますか？  
+GitHub では、リポジトリへ Pull Request を送ったり、Issue や Pull Request に対してコメントをすることで貢献できます。
+
+では、みなさんはオープンソースをゼロから作成し、以下のようなパッケージサイトにアップしたことがありますか？
 
 - [PyPI](https://pypi.org/) (Python)
 - [npm](https://www.npmjs.com/) (Node.js)
@@ -22,13 +29,11 @@ GitHub でならリポジトリへ Pull Request を送ってマージしても�
 
 私は今までやったことがありませんでした。
 
-今回、とあるきっかけがあって Python 製のオープンソースを作成し、パッケージサイトにアップするところまでをやってみましたので、
-一連の流れを紹介しようと思います。
+今回、とあるきっかけがあって Python 製のオープンソースを作成し、パッケージサイトにアップするところまでを行いましたので、一連の流れを紹介しようと思います。
 
 ## 今回作ったもの
 
-社内で使っている某データベースマイグレーションツールが使いにくいと感じており、
-より使いやすいツールが欲しかったため、今回作成しました。
+社内で使っているあるデータベースマイグレーションツールが使いにくいと感じており、より使いやすいツールが欲しかったため、今回作成しました。
 
 [chronovoyage - PyPI](https://pypi.org/project/chronovoyage/)
 
@@ -63,16 +68,12 @@ chronovoyage migrate
 
 ## リポジトリの作成
 
-#### GitHub にリポジトリを作成する
+### GitHub にリポジトリを作成する
 
-私自身、普段は GitLab でリポジトリを作成しますが、今回は GitHub で作成しました。  
-GitHub で作成した理由は以下の通りです。
+オープンソースの多くが GitHub で管理されており、他のプロジェクトを参考にしやすい点が魅力です。
+また、GitHub Codespaces や GitHub Actions などのツールを活用することで、容易に開発環境を構築し、CI/CD パイプラインを設定できます。
 
-- オープンソースの多くが GitHub で管理されており、オープンソースを作成する際に参考にしやすい
-- GitHub Codespaces を使えばクラウド環境を簡単に構築でき、他の人が開発に参加するハードルを下げられる
-- これから使う各種ツール類において、GitHub Actions での CI/CD 構築手順が充実している
-
-#### Hatch を使ってプロジェクトを作成する
+### Hatch を使ってプロジェクトを作成する
 
 今回は Python パッケージに必要な環境管理・テスト・静的解析・パッケージビルドなどのコマンドが一つにまとまった
 [Hatch](https://hatch.pypa.io/latest/) を使用しました。
@@ -81,62 +82,110 @@ GitHub で作成した理由は以下の通りです。
 従来は Python の複数環境切り替えのために pyenv を入れ、テストのために pytest を入れ、複数バージョンテストのために tox を入れ、
 静的解析のために isort/black/flake8/mypy/ruff 等を入れ、パッケージ作成・ビルドのために build を入れ・・・
 とツール類をいろんなところから探してこなければなりませんでした。  
-[Hatch](https://hatch.pypa.io/latest/) ではこれらのツールが内包されており、すべては
-`hatch` コマンドで実行できるので非常に簡単です。
+Hatch ではこれらのツールが内包されており、すべては `hatch` コマンドで実行できます。
 {{</ alert >}}
 
 例えば、プロジェクトは以下のコマンドで簡単に作成できます。
 
 ```shell
-hatch new "My project"
+hatch new "My Project"
 ```
 
-テストは `hatch test`、静的解析はデフォルトでは `hatch run types:check` で簡単に実行できます。
+テストや静的解析は以下のコマンドで実行できます。
+
+```shell
+# テスト
+hatch test
+
+# プロジェクトに定義したすべての Python バージョンでテスト
+hatch test -a
+
+# 静的解析
+hatch run types:check
+```
+
+また、環境は複数作成することも可能です。
+
+```shell
+# 環境の作成
+hatch env create
+
+# 仮想環境のアクティベート
+hatch shell
+```
+
+### プロジェクトを設定する
+
+Python では `pyproject.toml` にプロジェクト設定を記載します。
+以下は設定ファイルの例です。
+
+```toml
+[project]
+name = "my_project"
+version = "0.1.0"
+description = "A sample Python project"
+authors = [
+    { name="Your Name", email="yourname@example.com" }
+]
+
+[tool.hatch.build.targets.sdist]
+# ソースディストリビューションのターゲット設定
+include = ["src"]
+
+[tool.hatch.build.targets.wheel]
+# ホイールパッケージのターゲット設定
+packages = [
+  "src/chronovoyage",
+]
+```
 
 ## コーディング・テスト
 
-#### 複数バージョンに対応する
+### 複数バージョンに対応する
 
 オープンソースにおけるコーディングでもっとも重要なのが、「複数バージョンに対応すること」です。
-
 オープンソースを使う人の環境は様々なので、多くの人が使えるようにするためにより互換性のあるコードを書く必要があります。
-Python なら現在は Python 3.8 以降に対応した方がよく、普段の開発には Python 3.8 を使用します。  
+
+Python なら現在は Python 3.8 以降に対応するのが一般的です。普段の開発には Python 3.8 を使用します。
 「Python 3.8 以降に対応」をサービス品質として掲げるためには、複数バージョンでのテストを CI に組み込み、
 適切なテストが常に実行されている必要があります。
 
-プロダクト開発においては、セキュリティ品質上の理由から不定期でのバージョンアップが必要になります。  
+プロダクト開発においては、セキュリティ品質上の理由から不定期でのバージョンアップが必要になります。
 複数バージョンで対応できるような体制を構築しておくと、いざバージョンアップをする際に工数が削減できるかもしれません。
 
-#### 静的解析
+### 静的解析
 
-一人で開発するならまだしも、オープンソースはこの先不特定多数のエンジニアが編集・利用するものですから、
-静的解析を行うことで型のミスによるバグやレアケースでの不具合を未然に防いだ方が良いと考えます。  
-開発環境は人によってまちまちであるため、特定のエディタでしか使えない特殊なツールではなく、
-基本的にはコマンドラインで完結できるようなものを用意するのが望ましいです。
+一人で開発するならまだしも、オープンソースはこの先不特定多数のエンジニアが編集・利用します。
+そのため、静的解析を行うことで型のミスによるバグやレアケースでの不具合を未然に防ぐことが重要です。
+開発環境は人によってさまざまなので、特定のエディタでしか使えない特殊なツールではなく、基本的にはコマンドラインで完結できるものが望ましいです。
 
 {{< alert type="success" >}}
 私の理想は、IntelliJ (JetBrains 社), VSCode, Vim, GitHub Codespaces のどれを使っても安全なコードが書けることです。
 {{</ alert >}}
 
-#### エラーハンドリング
+### エラーハンドリング
 
 Python のオープンソースを使う人すべてが Python の言語仕様に精通しているわけではありませんし、
-オープンソースのコードそのものを理解しているわけでもありません。  
+オープンソースのコードそのものを理解しているわけでもありません。
 特に、今回私が作ったようなデータベースマイグレーションツールの場合、Python コード内で import して使うのではなく
 Linux コマンドのように使うことが想定されています。
 
-そのため、プログラム内部で起きうる例外を補足し、独自の例外クラスを投げ直したり・エラーログを出力することで
+そのため、プログラム内部で起きうる例外を捕捉し、独自の例外クラスを投げ直したり、エラーログを出力することで
 利用者にわかりやすくエラーを伝える必要があります。
+次の例では、ディレクトリの作成時にエラーが発生した場合に独自の例外を投げてエラーログを出力します。
 
 ```python
 import os
 from logging import getLogger
 
+
 class FailedToMakeDirectoryError(Exception):
     def __init__(self, directory: str) -> None:
         super().__init__(f"failed to make directory \"{directory}\".")
 
+
 logger = getLogger()
+
 try:
     os.makedirs('sample')
 except OSError:
@@ -163,15 +212,13 @@ build(core): update version to 0.1.6
 
 ##### 絵文字を記載する
 
-開発種別ごとに決まった絵文字を使うことで、開発内容が一目でわかるようにする手法です。
+開発種別ごとに決まった絵文字を使うことで、開発内容が一目でわかるようにする手法です。以下はその一例です。
 
-```text
-🐛 verbose オプションで設定されるログレベルが間違っていたので修正
-```
-
-```text
-🔨 バージョン番号の出力方法を変更
-```
+- 🚀 `feat:` 新しい機能の追加
+- 🐛 `fix:` バグ修正
+- 📝 `docs:` ドキュメントの変更
+- 🎨 `style:` コードのスタイル修正（動作に影響しない変更）
+- 🔧 `build:` ビルド関連の変更
 
 ## ドキュメント類の整備
 
@@ -210,8 +257,7 @@ MIT ライセンスであれば、GitHub 上でテンプレートを選択し、
 通常は `LICENSE` や `LICENSE.txt` というファイル名でリポジトリ名に含まれています。
 
 {{< alert type="info" >}}
-※ライセンスの種類についてはこちらの記事が参考になります。  
-https://snyk.io/jp/learn/open-source-licenses/
+※ライセンスの種類については [こちらの記事](https://snyk.io/jp/learn/open-source-licenses/) が参考になります。
 {{</ alert >}}
 
 商用利用可能なライセンスでも、中には謝辞の表示が義務付けられる BSD-4 のようなライセンスもあるので、
@@ -230,8 +276,7 @@ https://snyk.io/jp/learn/open-source-licenses/
 
 {{< alert type="info" >}}
 私は GitHub 上で生成できるものをそのまま利用しています。  
-テンプレートの元となる文書はこちらに記載されています。  
-https://www.contributor-covenant.org/version/2/0/code_of_conduct/
+テンプレートの元となる文書は [こちら](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) に記載されています。
 {{</ alert >}}
 
 #### 貢献マニュアル
@@ -321,6 +366,72 @@ Python であれば [PyPI](https://pypi.org/) へアカウント登録します�
 PyPI においては、GitHub Actions を経由してプッシュしたパッケージが信頼されたものであることを証明するための仕組みがあるため、
 自動化は積極的に行いましょう。  
 
+次の例では、プルリクエストのマージをトリガーとしてリポジトリにタグを付与し、リリースノートの下書きを作成しています。
+
+`github/workflows/release.yml`
+
+```yaml
+name: Release Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  tag_and_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Determine new version
+        id: new_version
+        run: |
+          NEW_TAG=$(date +%Y%m%d%H%M%S)
+          echo "::set-output name=version::$NEW_TAG"
+
+      - name: Create new tag
+        run: |
+          git tag ${{ steps.new_version.outputs.version }}
+          git push origin ${{ steps.new_version.outputs.version }}
+
+      - name: Release Draft
+        uses: release-drafter/release-drafter@v5
+        with:
+          version: ${{ steps.new_version.outputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+`.github/release-drafter.yml`
+
+```yaml
+name-template: 'Release ${{ version }}'
+tag-template: ${{ version }}
+categories:
+  - title: '🚀 New Features'
+    labels:
+      - 'feature'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bugfix'
+  - title: '🛠 Maintenance'
+    labels:
+      - 'chore'
+template: |
+  ## What's Changed
+  $CHANGES
+```
+
 {{< alert type="warning" >}}
 試行錯誤の過程でタグやリリースノートの作成を伴うため、失敗した際の後片付けが大変です。がんばってください。
 {{</ alert >}}
@@ -363,8 +474,6 @@ Documentation 用にドメインを取得している場合も多いです。
 私は Amazon Route 53 でドメインを取得し、GitHub Actions でビルドされたものを Amazon S3 にアップロードしてから
 AWS Amplify にデプロイしてドメインを設定しました。
 
-https://chronovoyagemigration.net/
-
 #### (おまけ) GitHub Organization 用のロゴを作成
 
 [Brandmark Logo Maker](https://brandmark.io/) を使うと、企業名・スローガン・カラーテーマを入力するだけで
@@ -377,7 +486,8 @@ LT の発表や交流会、履歴書などに活用できそうですね。
 
 ## 最後に
 
-今回は Python で作成したパッケージをオープンソース向けに最適化しましたが、
+この記事では、オープンソースパッケージをゼロから作成し、パッケージサイトへデプロイするまでの過程で学んだ点を解説しました。
+
 オープンソースにはたくさんのドキュメント・ルールが必要です。  
 また、オープンソースの多くは、テストやビルドなどの決まりきった作業が自動化されています。
 
