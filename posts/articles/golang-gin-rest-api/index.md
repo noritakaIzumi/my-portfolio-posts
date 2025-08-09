@@ -406,3 +406,5 @@ func TestGetAlbum_forNonExistentAlbum(t *testing.T) {
 	}
 }
 ```
+
+続きはまたの機会に書きます。
