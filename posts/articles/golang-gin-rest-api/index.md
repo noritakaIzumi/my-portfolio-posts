@@ -1,5 +1,4 @@
 ---
-draft: true
 title: "Go 製フレームワーク Gin を使って REST API を作成してみる"
 date: "2024-05-19T18:16:37+09:00"
 description: Gin を使った REST API の作成、テストコードを書いてみる。

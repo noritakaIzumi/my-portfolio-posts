@@ -1,7 +1,6 @@
 ---
 title: "Advent Calendar 2024 参加記事まとめ"
 date: "2024-12-26T00:00:00+09:00"
-draft: true
 description: Advent Calendar 2024 に参加した記事のまとめです。
 menu:
   sidebar:
