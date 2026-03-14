@@ -45,7 +45,7 @@ GitHub では、リポジトリへ Pull Request を送ったり、Issue や Pull
 chronovoyage migrate
 ```
 
-詳しくは [Chronovoyage Documentation](https://chronovoyagemigration.net/) をご覧ください。
+詳しくは [Chronovoyage Documentation](https://main.d4odiey55rpd9.amplifyapp.com) をご覧ください。
 
 ---
 
